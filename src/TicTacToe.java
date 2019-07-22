@@ -11,8 +11,16 @@ public class TicTacToe {
 
         System.out.print("Welcome to Tic-Tac-Toe, are you ready to play? Here we go!\n\n");
 
-        System.out.println("Here is the board:");
-        System.out.println(board.board);
+        do {
+            board.switchTurns();
+            System.out.println(board.board);
+            System.out.print("Player " + board.playerTurn + ", what space do you want to play? : ");
+            int spaceNum = kb.nextInt();
+            board.markSpace(spaceNum);
+            board.didPlayerWin();
+         } while ( !board.gameOver );
+
+         System.out.println("Game is over now. Player " + board.playerTurn + " is the winner!");
 
         kb.close();
     }
