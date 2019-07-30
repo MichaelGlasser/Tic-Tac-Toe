@@ -67,7 +67,7 @@ public class Board {
    * @param value The value to update to
    */
   private void setSpace(int index, String value) {
-    spaces.set(index - 1, value);
+    spaces.set(index, value);
   }
 
   /**
